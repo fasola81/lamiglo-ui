@@ -1,5 +1,7 @@
 'use client';
 
+import Link from 'next/link';
+
 export default function Footer() {
   const handleBackToTop = (e) => {
     e.preventDefault();
@@ -20,6 +22,9 @@ export default function Footer() {
           <a href="#services" className="footer-link" onClick={(e) => { e.preventDefault(); document.querySelector('#services')?.scrollIntoView({ behavior: 'smooth' }); }}>Services</a>
           <a href="#showcase" className="footer-link" onClick={(e) => { e.preventDefault(); document.querySelector('#showcase')?.scrollIntoView({ behavior: 'smooth' }); }}>Showcase</a>
           <a href="#contact" className="footer-link" onClick={(e) => { e.preventDefault(); document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' }); }}>Contact</a>
+          <span className="footer-divider">|</span>
+          <Link href="/privacy" className="footer-link">Privacy</Link>
+          <Link href="/terms" className="footer-link">Terms</Link>
         </div>
 
         <button className="footer-back-to-top" onClick={handleBackToTop} aria-label="Back to top">
