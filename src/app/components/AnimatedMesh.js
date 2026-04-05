@@ -42,8 +42,8 @@ const EDGES = [
 
 function getColor(type, opacity = 1) {
   return type === 'cyan'
-    ? `rgba(0, 212, 255, ${opacity})`
-    : `rgba(232, 184, 109, ${opacity})`;
+    ? `rgba(168, 85, 247, ${opacity})`
+    : `rgba(255, 138, 101, ${opacity})`;
 }
 
 export default function AnimatedMesh() {
@@ -71,12 +71,12 @@ export default function AnimatedMesh() {
       >
         <defs>
           <radialGradient id="mesh-glow-cyan" cx="50%" cy="50%" r="50%">
-            <stop offset="0%" stopColor="rgba(0,212,255,0.25)" />
-            <stop offset="100%" stopColor="rgba(0,212,255,0)" />
+            <stop offset="0%" stopColor="rgba(168,85,247,0.25)" />
+            <stop offset="100%" stopColor="rgba(168,85,247,0)" />
           </radialGradient>
           <radialGradient id="mesh-glow-copper" cx="50%" cy="50%" r="50%">
-            <stop offset="0%" stopColor="rgba(232,184,109,0.2)" />
-            <stop offset="100%" stopColor="rgba(232,184,109,0)" />
+            <stop offset="0%" stopColor="rgba(255,138,101,0.2)" />
+            <stop offset="100%" stopColor="rgba(255,138,101,0)" />
           </radialGradient>
           <filter id="mesh-blur">
             <feGaussianBlur stdDeviation="0.3" />

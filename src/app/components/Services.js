@@ -10,8 +10,8 @@ function WebDevIcon() {
     <svg className="service-animated-icon" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
       <defs>
         <linearGradient id="webdev-grad" x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%" stopColor="rgba(0,212,255,0.15)" />
-          <stop offset="100%" stopColor="rgba(0,212,255,0.05)" />
+          <stop offset="0%" stopColor="rgba(168,85,247,0.15)" />
+          <stop offset="100%" stopColor="rgba(168,85,247,0.05)" />
         </linearGradient>
       </defs>
 
@@ -52,8 +52,8 @@ function AIIcon() {
     <svg className="service-animated-icon" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
       <defs>
         <radialGradient id="ai-core-glow" cx="50%" cy="50%" r="50%">
-          <stop offset="0%" stopColor="rgba(232,184,109,0.3)" />
-          <stop offset="100%" stopColor="rgba(232,184,109,0)" />
+          <stop offset="0%" stopColor="rgba(255,138,101,0.3)" />
+          <stop offset="100%" stopColor="rgba(255,138,101,0)" />
         </radialGradient>
       </defs>
 
@@ -61,7 +61,7 @@ function AIIcon() {
       <circle cx="30" cy="30" r="10" fill="url(#ai-core-glow)" stroke="var(--copper-300)" strokeWidth="1.2">
         <animate attributeName="r" values="9;11;9" dur="3s" repeatCount="indefinite" />
       </circle>
-      <circle cx="30" cy="30" r="4" fill="rgba(232,184,109,0.5)">
+      <circle cx="30" cy="30" r="4" fill="rgba(255,138,101,0.5)">
         <animate attributeName="r" values="3;5;3" dur="3s" repeatCount="indefinite" />
       </circle>
 
@@ -103,7 +103,7 @@ function AIIcon() {
       ))}
 
       {/* Orbiting ring */}
-      <circle cx="30" cy="30" r="20" fill="none" stroke="rgba(232,184,109,0.12)" strokeWidth="0.8" strokeDasharray="3 5">
+      <circle cx="30" cy="30" r="20" fill="none" stroke="rgba(255,138,101,0.12)" strokeWidth="0.8" strokeDasharray="3 5">
         <animateTransform attributeName="transform" type="rotate" values="0 30 30;360 30 30" dur="20s" repeatCount="indefinite" />
       </circle>
     </svg>
@@ -116,7 +116,7 @@ function AIIcon() {
 function AnimatedCheck({ color, delay = 0 }) {
   return (
     <svg className="service-check-icon" viewBox="0 0 20 20" fill="none" width="16" height="16">
-      <circle cx="10" cy="10" r="8" stroke={color === 'cyan' ? 'rgba(0,212,255,0.2)' : 'rgba(232,184,109,0.2)'} strokeWidth="1" />
+      <circle cx="10" cy="10" r="8" stroke={color === 'cyan' ? 'rgba(168,85,247,0.2)' : 'rgba(255,138,101,0.2)'} strokeWidth="1" />
       <path
         d="M6 10l3 3 5-6"
         stroke={color === 'cyan' ? 'var(--cyan-400)' : 'var(--copper-300)'}
@@ -154,16 +154,16 @@ export default function Services() {
 
             {/* SVG Corner accents (draw on hover) */}
             <svg className="service-corner-accent top-left" viewBox="0 0 30 30" fill="none">
-              <path d="M0 20 L0 4 Q0 0 4 0 L20 0" stroke="rgba(0,212,255,0.4)" strokeWidth="1.5" strokeLinecap="round" />
+              <path d="M0 20 L0 4 Q0 0 4 0 L20 0" stroke="rgba(168,85,247,0.4)" strokeWidth="1.5" strokeLinecap="round" />
             </svg>
             <svg className="service-corner-accent top-right" viewBox="0 0 30 30" fill="none">
-              <path d="M10 0 L26 0 Q30 0 30 4 L30 20" stroke="rgba(0,212,255,0.4)" strokeWidth="1.5" strokeLinecap="round" />
+              <path d="M10 0 L26 0 Q30 0 30 4 L30 20" stroke="rgba(168,85,247,0.4)" strokeWidth="1.5" strokeLinecap="round" />
             </svg>
             <svg className="service-corner-accent bottom-left" viewBox="0 0 30 30" fill="none">
-              <path d="M0 10 L0 26 Q0 30 4 30 L20 30" stroke="rgba(0,212,255,0.4)" strokeWidth="1.5" strokeLinecap="round" />
+              <path d="M0 10 L0 26 Q0 30 4 30 L20 30" stroke="rgba(168,85,247,0.4)" strokeWidth="1.5" strokeLinecap="round" />
             </svg>
             <svg className="service-corner-accent bottom-right" viewBox="0 0 30 30" fill="none">
-              <path d="M10 30 L26 30 Q30 30 30 26 L30 10" stroke="rgba(0,212,255,0.4)" strokeWidth="1.5" strokeLinecap="round" />
+              <path d="M10 30 L26 30 Q30 30 30 26 L30 10" stroke="rgba(168,85,247,0.4)" strokeWidth="1.5" strokeLinecap="round" />
             </svg>
 
             <div className="service-icon cyan">
@@ -196,16 +196,16 @@ export default function Services() {
             <div className="service-card-glow copper" />
 
             <svg className="service-corner-accent top-left" viewBox="0 0 30 30" fill="none">
-              <path d="M0 20 L0 4 Q0 0 4 0 L20 0" stroke="rgba(232,184,109,0.4)" strokeWidth="1.5" strokeLinecap="round" />
+              <path d="M0 20 L0 4 Q0 0 4 0 L20 0" stroke="rgba(255,138,101,0.4)" strokeWidth="1.5" strokeLinecap="round" />
             </svg>
             <svg className="service-corner-accent top-right" viewBox="0 0 30 30" fill="none">
-              <path d="M10 0 L26 0 Q30 0 30 4 L30 20" stroke="rgba(232,184,109,0.4)" strokeWidth="1.5" strokeLinecap="round" />
+              <path d="M10 0 L26 0 Q30 0 30 4 L30 20" stroke="rgba(255,138,101,0.4)" strokeWidth="1.5" strokeLinecap="round" />
             </svg>
             <svg className="service-corner-accent bottom-left" viewBox="0 0 30 30" fill="none">
-              <path d="M0 10 L0 26 Q0 30 4 30 L20 30" stroke="rgba(232,184,109,0.4)" strokeWidth="1.5" strokeLinecap="round" />
+              <path d="M0 10 L0 26 Q0 30 4 30 L20 30" stroke="rgba(255,138,101,0.4)" strokeWidth="1.5" strokeLinecap="round" />
             </svg>
             <svg className="service-corner-accent bottom-right" viewBox="0 0 30 30" fill="none">
-              <path d="M10 30 L26 30 Q30 30 30 26 L30 10" stroke="rgba(232,184,109,0.4)" strokeWidth="1.5" strokeLinecap="round" />
+              <path d="M10 30 L26 30 Q30 30 30 26 L30 10" stroke="rgba(255,138,101,0.4)" strokeWidth="1.5" strokeLinecap="round" />
             </svg>
 
             <div className="service-icon copper">

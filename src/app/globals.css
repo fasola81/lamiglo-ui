@@ -1,66 +1,81 @@
 /* ============================================================
    LAMIGLO.COM — Design System & Global Styles
-   Premium Dark Mode | Cyan + Copper/Gold Accents
+   Colorful Gradient Theme | Violet + Coral/Amber Accents
+   Light + Dark Mode via prefers-color-scheme
    ============================================================ */
 
 /* ── Google Fonts ── */
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap');
 
-/* ── CSS Custom Properties (Design Tokens) ── */
+/* ── CSS Custom Properties (Design Tokens) — LIGHT MODE DEFAULT ── */
 :root {
-  /* Backgrounds */
-  --bg-deepest: #090909;
-  --bg-deep: #0D0D0D;
-  --bg-base: #111114;
-  --bg-surface: #1A1A1F;
-  --bg-elevated: #1E1E24;
-  --bg-card: #22222A;
-  --bg-hover: #2A2A32;
+  /* Gradient Background */
+  --gradient-bg: linear-gradient(135deg, #2D1B69 0%, #5B2E91 25%, #9B4DCA 45%, #FF6B6B 70%, #FFD93D 100%);
+  --gradient-bg-subtle: linear-gradient(135deg, #3D2B79 0%, #6B3EA1 30%, #AB5DDA 55%, #FF7B7B 80%, #FFE94D 100%);
+
+  /* Backgrounds — Glass Surfaces */
+  --bg-deepest: rgba(255, 255, 255, 0.06);
+  --bg-deep: transparent;
+  --bg-base: rgba(255, 255, 255, 0.08);
+  --bg-surface: rgba(255, 255, 255, 0.12);
+  --bg-elevated: rgba(255, 255, 255, 0.18);
+  --bg-card: rgba(255, 255, 255, 0.14);
+  --bg-hover: rgba(255, 255, 255, 0.22);
+
+  /* Glass effect */
+  --glass-blur: blur(20px) saturate(1.4);
+  --glass-border: 1px solid rgba(255, 255, 255, 0.2);
 
   /* Borders */
-  --border-subtle: rgba(255, 255, 255, 0.06);
-  --border-default: rgba(255, 255, 255, 0.1);
-  --border-strong: rgba(255, 255, 255, 0.15);
+  --border-subtle: rgba(255, 255, 255, 0.12);
+  --border-default: rgba(255, 255, 255, 0.18);
+  --border-strong: rgba(255, 255, 255, 0.28);
 
-  /* Primary Accent — Electric Cyan */
-  --cyan-50: #E6FAFF;
-  --cyan-100: #B3F0FF;
-  --cyan-200: #80E6FF;
-  --cyan-300: #4DDBFF;
-  --cyan-400: #1AD1FF;
-  --cyan-500: #00D4FF;
-  --cyan-600: #00A8CC;
-  --cyan-700: #007D99;
-  --cyan-800: #005266;
-  --cyan-900: #002633;
+  /* Primary Accent — Vivid Violet */
+  --cyan-50: #F3E8FF;
+  --cyan-100: #E9D5FF;
+  --cyan-200: #D8B4FE;
+  --cyan-300: #C084FC;
+  --cyan-400: #A855F7;
+  --cyan-500: #9333EA;
+  --cyan-600: #7C3AED;
+  --cyan-700: #6D28D9;
+  --cyan-800: #5B21B6;
+  --cyan-900: #4C1D95;
   --primary: var(--cyan-500);
-  --primary-glow: rgba(0, 212, 255, 0.15);
-  --primary-glow-strong: rgba(0, 212, 255, 0.3);
+  --primary-glow: rgba(147, 51, 234, 0.2);
+  --primary-glow-strong: rgba(147, 51, 234, 0.4);
 
-  /* Secondary Accent — Burnished Copper/Gold */
-  --copper-50: #FFF8F0;
-  --copper-100: #FDECD6;
-  --copper-200: #F5D4A8;
-  --copper-300: #E8B86D;
-  --copper-400: #D4A056;
-  --copper-500: #C8956C;
-  --copper-600: #B07A4A;
-  --copper-700: #8F5F33;
-  --copper-800: #6E4520;
-  --copper-900: #4D2F12;
+  /* Secondary Accent — Warm Coral/Amber */
+  --copper-50: #FFF7ED;
+  --copper-100: #FFEDD5;
+  --copper-200: #FED7AA;
+  --copper-300: #FF8A65;
+  --copper-400: #FF6B6B;
+  --copper-500: #EF4444;
+  --copper-600: #DC2626;
+  --copper-700: #B91C1C;
+  --copper-800: #991B1B;
+  --copper-900: #7F1D1D;
   --secondary: var(--copper-300);
-  --secondary-glow: rgba(232, 184, 109, 0.15);
-  --secondary-glow-strong: rgba(232, 184, 109, 0.3);
+  --secondary-glow: rgba(255, 138, 101, 0.2);
+  --secondary-glow-strong: rgba(255, 138, 101, 0.4);
 
-  /* Text */
-  --text-primary: #F0F0F2;
-  --text-secondary: #A0A0A8;
-  --text-tertiary: #6B6B75;
-  --text-inverse: #0D0D0D;
+  /* Amber highlight */
+  --amber-400: #FBBF24;
+  --amber-300: #FCD34D;
+
+  /* Text — Light mode: dark text on glass */
+  --text-primary: #FFFFFF;
+  --text-secondary: rgba(255, 255, 255, 0.78);
+  --text-tertiary: rgba(255, 255, 255, 0.55);
+  --text-inverse: #FFFFFF;
+  --text-muted: rgba(255, 255, 255, 0.5);
 
   /* Typography */
   --font-heading: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
   --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-display: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
 
   /* Spacing */
   --space-xs: 0.25rem;
@@ -74,20 +89,20 @@
   --space-5xl: 8rem;
 
   /* Radius */
-  --radius-sm: 6px;
-  --radius-md: 10px;
-  --radius-lg: 14px;
-  --radius-xl: 20px;
-  --radius-2xl: 28px;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 22px;
+  --radius-2xl: 30px;
   --radius-full: 9999px;
 
-  /* Shadows */
-  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
-  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.4);
-  --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.5);
-  --shadow-xl: 0 16px 48px rgba(0, 0, 0, 0.6);
-  --shadow-cyan: 0 0 30px rgba(0, 212, 255, 0.15);
-  --shadow-copper: 0 0 30px rgba(232, 184, 109, 0.12);
+  /* Shadows — softer for colorful backgrounds */
+  --shadow-sm: 0 2px 8px rgba(45, 27, 105, 0.15);
+  --shadow-md: 0 4px 20px rgba(45, 27, 105, 0.2);
+  --shadow-lg: 0 8px 40px rgba(45, 27, 105, 0.25);
+  --shadow-xl: 0 16px 56px rgba(45, 27, 105, 0.3);
+  --shadow-cyan: 0 0 30px rgba(147, 51, 234, 0.2);
+  --shadow-copper: 0 0 30px rgba(255, 138, 101, 0.18);
 
   /* Transitions */
   --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
@@ -98,6 +113,34 @@
   /* Layout */
   --max-width: 1280px;
   --header-height: 72px;
+}
+
+/* ── DARK MODE OVERRIDES ── */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --gradient-bg: linear-gradient(135deg, #0F0A1E 0%, #1A1040 25%, #2D1B69 45%, #3D1566 65%, #1A1040 100%);
+    --gradient-bg-subtle: linear-gradient(135deg, #0F0A1E 0%, #1A1040 30%, #2D1B69 60%, #1A1040 100%);
+
+    --bg-deepest: rgba(10, 6, 25, 0.6);
+    --bg-surface: rgba(255, 255, 255, 0.06);
+    --bg-elevated: rgba(255, 255, 255, 0.09);
+    --bg-card: rgba(255, 255, 255, 0.07);
+    --bg-hover: rgba(255, 255, 255, 0.12);
+
+    --border-subtle: rgba(255, 255, 255, 0.08);
+    --border-default: rgba(255, 255, 255, 0.12);
+    --border-strong: rgba(255, 255, 255, 0.2);
+
+    --text-primary: #F0EEFF;
+    --text-secondary: rgba(240, 238, 255, 0.72);
+    --text-tertiary: rgba(240, 238, 255, 0.45);
+    --text-muted: rgba(240, 238, 255, 0.38);
+
+    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
+    --shadow-md: 0 4px 20px rgba(0, 0, 0, 0.4);
+    --shadow-lg: 0 8px 40px rgba(0, 0, 0, 0.5);
+    --shadow-xl: 0 16px 56px rgba(0, 0, 0, 0.6);
+  }
 }
 
 /* ── Reset & Base ── */
@@ -120,9 +163,11 @@ body {
   font-family: var(--font-body);
   font-weight: 400;
   color: var(--text-primary);
-  background-color: var(--bg-deep);
+  background: var(--gradient-bg);
+  background-attachment: fixed;
   line-height: 1.6;
   overflow-x: hidden;
+  min-height: 100vh;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -209,21 +254,21 @@ input, textarea {
 }
 
 .gradient-text-cyan {
-  background: linear-gradient(135deg, var(--cyan-400), var(--cyan-200));
+  background: linear-gradient(135deg, var(--cyan-300), var(--cyan-100));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
 .gradient-text-copper {
-  background: linear-gradient(135deg, var(--copper-300), var(--copper-100));
+  background: linear-gradient(135deg, var(--copper-300), var(--amber-300));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
 .gradient-text-mixed {
-  background: linear-gradient(135deg, var(--cyan-400), var(--copper-300));
+  background: linear-gradient(135deg, var(--cyan-300), var(--copper-300), var(--amber-400));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -273,7 +318,7 @@ input, textarea {
   width: 100%;
   height: 100%;
   background-image: 
-    radial-gradient(circle 1px, rgba(255,255,255,0.03) 1px, transparent 1px);
+    radial-gradient(circle 1px, rgba(255,255,255,0.06) 1px, transparent 1px);
   background-size: 40px 40px;
   pointer-events: none;
 }
@@ -294,9 +339,9 @@ input, textarea {
 }
 
 .header.scrolled {
-  background: rgba(13, 13, 13, 0.75);
-  backdrop-filter: blur(20px) saturate(1.5);
-  -webkit-backdrop-filter: blur(20px) saturate(1.5);
+  background: rgba(45, 27, 105, 0.55);
+  backdrop-filter: blur(24px) saturate(1.6);
+  -webkit-backdrop-filter: blur(24px) saturate(1.6);
   box-shadow: 0 1px 0 var(--border-subtle), var(--shadow-md);
 }
 
@@ -330,7 +375,7 @@ input, textarea {
   font-size: 1.25rem;
   font-weight: 800;
   letter-spacing: 0.08em;
-  background: linear-gradient(135deg, var(--cyan-400) 0%, var(--copper-300) 100%);
+  background: linear-gradient(135deg, #FFFFFF 0%, var(--amber-300) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -383,7 +428,7 @@ input, textarea {
 
 .header-nav-link.active::after {
   width: 100%;
-  background: linear-gradient(90deg, var(--cyan-500), var(--copper-300));
+  background: linear-gradient(90deg, var(--cyan-400), var(--copper-300));
 }
 
 .header-cta {
@@ -391,13 +436,13 @@ input, textarea {
   align-items: center;
   gap: var(--space-sm);
   padding: 10px 22px;
-  background: linear-gradient(135deg, var(--cyan-600), var(--cyan-500));
-  color: var(--bg-deep);
+  background: linear-gradient(135deg, var(--copper-400), var(--copper-300));
+  color: #FFFFFF;
   font-size: 0.85rem;
   font-weight: 600;
   border-radius: var(--radius-full);
   transition: all var(--transition-base);
-  box-shadow: 0 0 20px rgba(0, 212, 255, 0.2);
+  box-shadow: 0 0 20px rgba(255, 107, 107, 0.25);
   position: relative;
   overflow: hidden;
 }
@@ -407,7 +452,7 @@ input, textarea {
   position: absolute;
   inset: -2px;
   border-radius: var(--radius-full);
-  background: linear-gradient(135deg, var(--cyan-500), var(--copper-300), var(--cyan-400));
+  background: linear-gradient(135deg, var(--copper-300), var(--amber-400), var(--copper-400));
   background-size: 300% 300%;
   animation: gradientBorderRotate 4s ease-in-out infinite;
   z-index: -1;
@@ -427,7 +472,7 @@ input, textarea {
 
 .header-cta:hover {
   transform: translateY(-1px);
-  box-shadow: 0 0 30px rgba(0, 212, 255, 0.35);
+  box-shadow: 0 0 30px rgba(255, 107, 107, 0.35);
 }
 
 /* Mobile Menu Toggle */
@@ -465,7 +510,7 @@ input, textarea {
   display: none;
   position: fixed;
   inset: 0;
-  background: rgba(9, 9, 9, 0.97);
+  background: rgba(45, 27, 105, 0.97);
   backdrop-filter: blur(30px);
   z-index: 999;
   flex-direction: column;
@@ -549,10 +594,10 @@ input, textarea {
 .highlight-cyan.shimmer {
   background: linear-gradient(
     90deg,
-    var(--cyan-300) 0%,
-    var(--cyan-100) 40%,
-    var(--cyan-500) 60%,
-    var(--cyan-300) 100%
+    var(--cyan-200) 0%,
+    #FFFFFF 40%,
+    var(--cyan-400) 60%,
+    var(--cyan-200) 100%
   );
   background-size: 300% 100%;
   -webkit-background-clip: text;
@@ -563,10 +608,10 @@ input, textarea {
 .highlight-copper.shimmer {
   background: linear-gradient(
     90deg,
-    var(--copper-200) 0%,
-    var(--copper-50) 40%,
+    var(--copper-300) 0%,
+    var(--amber-300) 40%,
     var(--copper-400) 60%,
-    var(--copper-200) 100%
+    var(--copper-300) 100%
   );
   background-size: 300% 100%;
   -webkit-background-clip: text;
@@ -642,7 +687,7 @@ input, textarea {
   height: 500px;
   top: 10%;
   left: -10%;
-  background: radial-gradient(circle, rgba(0, 212, 255, 0.12) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(147, 51, 234, 0.2) 0%, transparent 70%);
   animation: orbFloat1 12s ease-in-out infinite;
 }
 
@@ -651,7 +696,7 @@ input, textarea {
   height: 400px;
   bottom: 10%;
   right: 5%;
-  background: radial-gradient(circle, rgba(232, 184, 109, 0.08) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(255, 107, 107, 0.15) 0%, transparent 70%);
   animation: orbFloat2 15s ease-in-out infinite;
 }
 
@@ -680,8 +725,8 @@ input, textarea {
   align-items: center;
   gap: var(--space-sm);
   padding: 6px 16px;
-  background: rgba(0, 212, 255, 0.08);
-  border: 1px solid rgba(0, 212, 255, 0.2);
+  background: rgba(147, 51, 234, 0.12);
+  border: 1px solid rgba(147, 51, 234, 0.25);
   border-radius: var(--radius-full);
   font-size: 0.78rem;
   font-weight: 500;
@@ -747,13 +792,13 @@ input, textarea {
   align-items: center;
   gap: var(--space-sm);
   padding: 16px 36px;
-  background: linear-gradient(135deg, var(--cyan-500), var(--cyan-600));
-  color: var(--bg-deep);
+  background: linear-gradient(135deg, var(--copper-300), var(--copper-400));
+  color: #FFFFFF;
   font-size: 0.95rem;
   font-weight: 700;
   border-radius: var(--radius-full);
   transition: all var(--transition-base);
-  box-shadow: 0 0 30px rgba(0, 212, 255, 0.25), 0 4px 15px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0 30px rgba(255, 107, 107, 0.25), 0 4px 15px rgba(0, 0, 0, 0.2);
   letter-spacing: 0.02em;
   position: relative;
   overflow: hidden;
@@ -772,7 +817,7 @@ input, textarea {
 
 .btn-primary:hover {
   transform: translateY(-2px);
-  box-shadow: 0 0 45px rgba(0, 212, 255, 0.4), 0 8px 25px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 0 45px rgba(255, 107, 107, 0.35), 0 8px 25px rgba(0, 0, 0, 0.3);
 }
 
 .btn-primary:hover::before {
@@ -865,12 +910,12 @@ input, textarea {
 }
 
 .service-card:first-child:hover {
-  border-color: rgba(0, 212, 255, 0.15);
+  border-color: rgba(147, 51, 234, 0.15);
   box-shadow: var(--shadow-cyan);
 }
 
 .service-card:last-child:hover {
-  border-color: rgba(232, 184, 109, 0.15);
+  border-color: rgba(255, 138, 101, 0.15);
   box-shadow: var(--shadow-copper);
 }
 
@@ -999,13 +1044,13 @@ input, textarea {
 .service-card-glow.cyan {
   top: -80px;
   right: -80px;
-  background: rgba(0, 212, 255, 0.08);
+  background: rgba(147, 51, 234, 0.08);
 }
 
 .service-card-glow.copper {
   top: -80px;
   right: -80px;
-  background: rgba(232, 184, 109, 0.08);
+  background: rgba(255, 138, 101, 0.08);
 }
 
 /* ============================================================
@@ -1049,12 +1094,12 @@ input, textarea {
 
 /* Accent hover border variants */
 .showcase-tile[data-accent="cyan"]:hover {
-  border-color: rgba(0, 212, 255, 0.2);
+  border-color: rgba(147, 51, 234, 0.2);
   box-shadow: var(--shadow-cyan), var(--shadow-lg);
 }
 
 .showcase-tile[data-accent="copper"]:hover {
-  border-color: rgba(232, 184, 109, 0.2);
+  border-color: rgba(255, 138, 101, 0.2);
   box-shadow: var(--shadow-copper), var(--shadow-lg);
 }
 
@@ -1130,8 +1175,8 @@ input, textarea {
 }
 
 .showcase-tile-icon.copper {
-  background: rgba(232, 184, 109, 0.1);
-  border: 1px solid rgba(232, 184, 109, 0.15);
+  background: rgba(255, 138, 101, 0.1);
+  border: 1px solid rgba(255, 138, 101, 0.15);
 }
 
 .showcase-tile-icon svg {
@@ -1158,13 +1203,13 @@ input, textarea {
 }
 
 .showcase-tile-tag.cyan {
-  background: rgba(0, 212, 255, 0.08);
-  border: 1px solid rgba(0, 212, 255, 0.12);
+  background: rgba(147, 51, 234, 0.08);
+  border: 1px solid rgba(147, 51, 234, 0.12);
   color: var(--cyan-400);
 }
 
 .showcase-tile-tag.copper {
-  background: rgba(232, 184, 109, 0.08);
+  background: rgba(255, 138, 101, 0.08);
   border: 1px solid rgba(232, 184, 109, 0.12);
   color: var(--copper-300);
 }
@@ -1315,8 +1360,8 @@ input, textarea {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgba(232, 184, 109, 0.1);
-  border: 1px solid rgba(232, 184, 109, 0.15);
+  background: rgba(255, 138, 101, 0.1);
+  border: 1px solid rgba(255, 138, 101, 0.15);
   flex-shrink: 0;
   position: relative;
   z-index: 1;
@@ -1399,7 +1444,7 @@ input, textarea {
   width: 40px;
   height: 40px;
   border-radius: var(--radius-full);
-  background: rgba(232, 184, 109, 0.08);
+  background: rgba(255, 138, 101, 0.08);
   border: 1px solid rgba(232, 184, 109, 0.12);
   color: var(--copper-300);
   flex-shrink: 0;
@@ -1434,8 +1479,8 @@ input, textarea {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgba(0, 212, 255, 0.08);
-  border: 1px solid rgba(0, 212, 255, 0.12);
+  background: rgba(147, 51, 234, 0.08);
+  border: 1px solid rgba(147, 51, 234, 0.12);
   flex-shrink: 0;
 }
 
@@ -1501,7 +1546,7 @@ input, textarea {
   font-family: var(--font-heading);
   font-size: 1.1rem;
   font-weight: 700;
-  background: linear-gradient(135deg, var(--cyan-400), var(--copper-300));
+  background: linear-gradient(135deg, #FFFFFF, var(--amber-300));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -1826,7 +1871,7 @@ input, textarea {
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--bg-deep);
+  background: rgba(45, 27, 105, 0.3);
 }
 
 ::-webkit-scrollbar-thumb {
@@ -1859,7 +1904,7 @@ input, textarea {
   position: sticky;
   top: 0;
   z-index: 100;
-  background: rgba(13, 13, 13, 0.8);
+  background: rgba(45, 27, 105, 0.8);
   backdrop-filter: blur(20px) saturate(1.4);
   -webkit-backdrop-filter: blur(20px) saturate(1.4);
   border-bottom: 1px solid var(--border-subtle);
@@ -1933,8 +1978,8 @@ input, textarea {
   align-items: center;
   gap: var(--space-sm);
   padding: 9px 20px;
-  background: linear-gradient(135deg, var(--cyan-600), var(--cyan-500));
-  color: var(--bg-deep);
+  background: linear-gradient(135deg, var(--cyan-500), var(--cyan-400));
+  color: #FFFFFF;
   font-size: 0.82rem;
   font-weight: 600;
   border-radius: var(--radius-full);
@@ -2049,8 +2094,8 @@ input, textarea {
   align-items: center;
   justify-content: center;
   border-radius: var(--radius-md);
-  background: rgba(0, 212, 255, 0.08);
-  border: 1px solid rgba(0, 212, 255, 0.12);
+  background: rgba(147, 51, 234, 0.08);
+  border: 1px solid rgba(147, 51, 234, 0.12);
 }
 
 .insights-metric-icon svg {
@@ -2173,13 +2218,13 @@ input, textarea {
 }
 
 .insights-property-tag.cyan {
-  background: rgba(0, 212, 255, 0.08);
-  border: 1px solid rgba(0, 212, 255, 0.12);
+  background: rgba(147, 51, 234, 0.08);
+  border: 1px solid rgba(147, 51, 234, 0.12);
   color: var(--cyan-400);
 }
 
 .insights-property-tag.copper {
-  background: rgba(232, 184, 109, 0.08);
+  background: rgba(255, 138, 101, 0.08);
   border: 1px solid rgba(232, 184, 109, 0.12);
   color: var(--copper-300);
 }
@@ -2253,7 +2298,7 @@ input, textarea {
   align-items: center;
   justify-content: center;
   border-radius: var(--radius-sm);
-  background: rgba(232, 184, 109, 0.08);
+  background: rgba(255, 138, 101, 0.08);
   border: 1px solid rgba(232, 184, 109, 0.12);
   color: var(--copper-300);
   flex-shrink: 0;
@@ -2297,7 +2342,7 @@ input, textarea {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgba(232, 184, 109, 0.08);
+  background: rgba(255, 138, 101, 0.08);
   border: 1px solid rgba(232, 184, 109, 0.12);
   color: var(--copper-300);
   margin-bottom: var(--space-xl);
@@ -2831,7 +2876,7 @@ input, textarea {
 }
 
 .testimonial-avatar.copper {
-  background: rgba(232, 184, 109, 0.1);
+  background: rgba(255, 138, 101, 0.1);
   color: var(--copper-300);
   border: 1px solid rgba(232, 184, 109, 0.2);
 }
@@ -2895,15 +2940,15 @@ input, textarea {
 }
 
 .why-card-icon.cyan {
-  background: rgba(0, 212, 255, 0.08);
+  background: rgba(147, 51, 234, 0.08);
   color: var(--cyan-400);
   border: 1px solid rgba(0, 212, 255, 0.15);
 }
 
 .why-card-icon.copper {
-  background: rgba(232, 184, 109, 0.08);
+  background: rgba(255, 138, 101, 0.08);
   color: var(--copper-300);
-  border: 1px solid rgba(232, 184, 109, 0.15);
+  border: 1px solid rgba(255, 138, 101, 0.15);
 }
 
 .why-icon-svg {

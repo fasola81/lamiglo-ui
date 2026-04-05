@@ -18,15 +18,15 @@ export default function Contact() {
             {/* Pulse rings behind icon */}
             <div className="contact-pulse-container">
               <svg className="contact-pulse-svg" viewBox="0 0 80 80" fill="none" aria-hidden="true">
-                <circle cx="40" cy="40" r="20" stroke="rgba(232,184,109,0.15)" strokeWidth="0.8">
+                <circle cx="40" cy="40" r="20" stroke="rgba(255,138,101,0.15)" strokeWidth="0.8">
                   <animate attributeName="r" values="16;32;16" dur="4s" repeatCount="indefinite" />
                   <animate attributeName="opacity" values="0.6;0;0.6" dur="4s" repeatCount="indefinite" />
                 </circle>
-                <circle cx="40" cy="40" r="14" stroke="rgba(232,184,109,0.1)" strokeWidth="0.6">
+                <circle cx="40" cy="40" r="14" stroke="rgba(255,138,101,0.1)" strokeWidth="0.6">
                   <animate attributeName="r" values="12;26;12" dur="4s" begin="0.8s" repeatCount="indefinite" />
                   <animate attributeName="opacity" values="0.5;0;0.5" dur="4s" begin="0.8s" repeatCount="indefinite" />
                 </circle>
-                <circle cx="40" cy="40" r="10" stroke="rgba(232,184,109,0.08)" strokeWidth="0.5">
+                <circle cx="40" cy="40" r="10" stroke="rgba(255,138,101,0.08)" strokeWidth="0.5">
                   <animate attributeName="r" values="8;22;8" dur="4s" begin="1.6s" repeatCount="indefinite" />
                   <animate attributeName="opacity" values="0.4;0;0.4" dur="4s" begin="1.6s" repeatCount="indefinite" />
                 </circle>
@@ -41,7 +41,7 @@ export default function Contact() {
                 {/* Flap */}
                 <path d="M2 7 L14 16 L26 7" className="envelope-flap" />
                 {/* Letter peek */}
-                <rect x="8" y="6" width="12" height="8" rx="1" fill="rgba(232,184,109,0.15)" className="envelope-letter" />
+                <rect x="8" y="6" width="12" height="8" rx="1" fill="rgba(255,138,101,0.15)" className="envelope-letter" />
               </svg>
             </div>
 

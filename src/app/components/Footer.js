@@ -17,14 +17,14 @@ function WaveSeparator() {
       >
         <defs>
           <linearGradient id="wave-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
-            <stop offset="0%" stopColor="rgba(0,212,255,0.3)" />
-            <stop offset="50%" stopColor="rgba(232,184,109,0.25)" />
-            <stop offset="100%" stopColor="rgba(0,212,255,0.15)" />
+            <stop offset="0%" stopColor="rgba(168,85,247,0.3)" />
+            <stop offset="50%" stopColor="rgba(255,138,101,0.25)" />
+            <stop offset="100%" stopColor="rgba(168,85,247,0.15)" />
           </linearGradient>
           <linearGradient id="wave-gradient-2" x1="0%" y1="0%" x2="100%" y2="0%">
-            <stop offset="0%" stopColor="rgba(232,184,109,0.15)" />
-            <stop offset="50%" stopColor="rgba(0,212,255,0.2)" />
-            <stop offset="100%" stopColor="rgba(232,184,109,0.1)" />
+            <stop offset="0%" stopColor="rgba(255,138,101,0.15)" />
+            <stop offset="50%" stopColor="rgba(168,85,247,0.2)" />
+            <stop offset="100%" stopColor="rgba(255,138,101,0.1)" />
           </linearGradient>
         </defs>
 
@@ -58,7 +58,7 @@ function WaveSeparator() {
         </path>
 
         {/* Traveling sparkle */}
-        <circle r="2" fill="rgba(0,212,255,0.6)">
+        <circle r="2" fill="rgba(168,85,247,0.6)">
           <animateMotion
             dur="6s"
             repeatCount="indefinite"

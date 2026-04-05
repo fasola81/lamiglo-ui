@@ -56,7 +56,7 @@ function AnimatedLogo() {
       </circle>
 
       {/* Subtle pulse ring */}
-      <circle cx="28" cy="10" r="5" fill="none" stroke="rgba(0,212,255,0.2)" strokeWidth="0.5">
+      <circle cx="28" cy="10" r="5" fill="none" stroke="rgba(168,85,247,0.2)" strokeWidth="0.5">
         <animate attributeName="r" values="4;8;4" dur="4s" repeatCount="indefinite" />
         <animate attributeName="opacity" values="0.3;0;0.3" dur="4s" repeatCount="indefinite" />
       </circle>

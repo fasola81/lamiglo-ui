@@ -131,16 +131,16 @@ export default function TrustBar() {
         <svg viewBox="0 0 1440 4" preserveAspectRatio="none" className="trustbar-line-svg">
           <defs>
             <linearGradient id="trustbar-grad" x1="0%" y1="0%" x2="100%" y2="0%">
-              <stop offset="0%" stopColor="rgba(0,212,255,0)" />
-              <stop offset="30%" stopColor="rgba(0,212,255,0.4)" />
-              <stop offset="50%" stopColor="rgba(232,184,109,0.4)" />
-              <stop offset="70%" stopColor="rgba(0,212,255,0.4)" />
-              <stop offset="100%" stopColor="rgba(0,212,255,0)" />
+              <stop offset="0%" stopColor="rgba(168,85,247,0)" />
+              <stop offset="30%" stopColor="rgba(168,85,247,0.4)" />
+              <stop offset="50%" stopColor="rgba(255,138,101,0.4)" />
+              <stop offset="70%" stopColor="rgba(168,85,247,0.4)" />
+              <stop offset="100%" stopColor="rgba(168,85,247,0)" />
             </linearGradient>
           </defs>
           <rect x="0" y="1" width="1440" height="2" fill="url(#trustbar-grad)" rx="1" />
           {/* Traveling sparkle */}
-          <circle r="3" fill="rgba(0,212,255,0.8)">
+          <circle r="3" fill="rgba(168,85,247,0.8)">
             <animateMotion dur="4s" repeatCount="indefinite" path="M0,2 H1440" />
             <animate attributeName="opacity" values="0;1;1;0" dur="4s" repeatCount="indefinite" />
           </circle>

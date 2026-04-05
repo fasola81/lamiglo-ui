@@ -32,8 +32,8 @@ const steps = [
 ];
 
 function StepIcon({ number, accent }) {
-  const cyanColor = 'rgba(0,212,255,';
-  const copperColor = 'rgba(232,184,109,';
+  const cyanColor = 'rgba(168,85,247,';
+  const copperColor = 'rgba(255,138,101,';
   
   let strokeColor, fillColor;
   if (accent === 'cyan') {
@@ -89,14 +89,14 @@ export default function Process() {
             <svg viewBox="0 0 4 600" className="process-connector-svg">
               <defs>
                 <linearGradient id="process-line-grad" x1="0%" y1="0%" x2="0%" y2="100%">
-                  <stop offset="0%" stopColor="rgba(0,212,255,0.4)" />
-                  <stop offset="50%" stopColor="rgba(232,184,109,0.4)" />
-                  <stop offset="100%" stopColor="rgba(232,184,109,0.2)" />
+                  <stop offset="0%" stopColor="rgba(168,85,247,0.4)" />
+                  <stop offset="50%" stopColor="rgba(255,138,101,0.4)" />
+                  <stop offset="100%" stopColor="rgba(255,138,101,0.2)" />
                 </linearGradient>
               </defs>
               <line x1="2" y1="0" x2="2" y2="600" stroke="url(#process-line-grad)" strokeWidth="2" strokeDasharray="6 4" />
               {/* Traveling pulse */}
-              <circle r="3" fill="rgba(0,212,255,0.8)">
+              <circle r="3" fill="rgba(168,85,247,0.8)">
                 <animateMotion dur="5s" repeatCount="indefinite" path="M2,0 L2,600" />
                 <animate attributeName="opacity" values="0;1;1;0" dur="5s" repeatCount="indefinite" />
               </circle>

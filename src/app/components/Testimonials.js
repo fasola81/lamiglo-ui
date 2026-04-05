@@ -29,7 +29,7 @@ const testimonials = [
 ];
 
 function QuoteMark({ accent }) {
-  const color = accent === 'cyan' ? 'rgba(0,212,255,' : 'rgba(232,184,109,';
+  const color = accent === 'cyan' ? 'rgba(168,85,247,' : 'rgba(255,138,101,';
   return (
     <svg className="testimonial-quote-mark" viewBox="0 0 40 32" fill="none" aria-hidden="true">
       <path
@@ -54,8 +54,8 @@ function StarRating() {
         <svg key={i} viewBox="0 0 20 20" fill="none" className="testimonial-star" style={{ animationDelay: `${i * 100}ms` }}>
           <path
             d="M10 2 L12.4 7.2 L18 7.8 L13.8 11.6 L15 17 L10 14.2 L5 17 L6.2 11.6 L2 7.8 L7.6 7.2 Z"
-            fill="rgba(232,184,109,0.8)"
-            stroke="rgba(232,184,109,0.4)"
+            fill="rgba(255,138,101,0.8)"
+            stroke="rgba(255,138,101,0.4)"
             strokeWidth="0.5"
             className="star-fill"
           />
