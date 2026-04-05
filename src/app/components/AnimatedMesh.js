@@ -9,26 +9,41 @@ import { useEffect, useRef } from 'react';
    ────────────────────────────────────────────── */
 
 const NODES = [
-  { cx: 5, cy: 12, r: 1.5, color: 'cyan', dur: '18s', dx: 3, dy: -2 },
-  { cx: 15, cy: 8, r: 1, color: 'cyan', dur: '22s', dx: -2, dy: 4 },
-  { cx: 28, cy: 15, r: 2, color: 'copper', dur: '20s', dx: 4, dy: -3 },
-  { cx: 42, cy: 6, r: 1.5, color: 'cyan', dur: '25s', dx: -3, dy: 2 },
-  { cx: 55, cy: 18, r: 1, color: 'copper', dur: '19s', dx: 2, dy: -4 },
-  { cx: 68, cy: 10, r: 1.8, color: 'cyan', dur: '23s', dx: -4, dy: 3 },
-  { cx: 82, cy: 5, r: 1.2, color: 'copper', dur: '21s', dx: 3, dy: 2 },
-  { cx: 92, cy: 14, r: 1.5, color: 'cyan', dur: '17s', dx: -2, dy: -3 },
-  { cx: 10, cy: 35, r: 1, color: 'copper', dur: '24s', dx: 4, dy: 2 },
-  { cx: 25, cy: 42, r: 1.8, color: 'cyan', dur: '20s', dx: -3, dy: -2 },
-  { cx: 38, cy: 30, r: 1, color: 'copper', dur: '26s', dx: 2, dy: 4 },
-  { cx: 55, cy: 38, r: 1.5, color: 'cyan', dur: '22s', dx: -4, dy: -3 },
-  { cx: 70, cy: 32, r: 1.2, color: 'copper', dur: '19s', dx: 3, dy: 2 },
-  { cx: 85, cy: 40, r: 1, color: 'cyan', dur: '23s', dx: -2, dy: -4 },
-  { cx: 95, cy: 28, r: 1.5, color: 'copper', dur: '21s', dx: 2, dy: 3 },
-  { cx: 8, cy: 60, r: 1.2, color: 'cyan', dur: '25s', dx: -3, dy: -2 },
-  { cx: 22, cy: 68, r: 1.5, color: 'copper', dur: '18s', dx: 4, dy: 2 },
-  { cx: 48, cy: 55, r: 1, color: 'cyan', dur: '20s', dx: -2, dy: 4 },
-  { cx: 75, cy: 62, r: 1.8, color: 'copper', dur: '22s', dx: 3, dy: -3 },
-  { cx: 90, cy: 55, r: 1, color: 'cyan', dur: '24s', dx: -4, dy: 2 },
+  // Top region
+  { cx: 5, cy: 6, r: 1.5, color: 'cyan', dur: '18s', dx: 3, dy: -2 },
+  { cx: 15, cy: 4, r: 1, color: 'cyan', dur: '22s', dx: -2, dy: 4 },
+  { cx: 28, cy: 10, r: 2, color: 'copper', dur: '20s', dx: 4, dy: -3 },
+  { cx: 42, cy: 3, r: 1.5, color: 'cyan', dur: '25s', dx: -3, dy: 2 },
+  { cx: 55, cy: 12, r: 1, color: 'copper', dur: '19s', dx: 2, dy: -4 },
+  { cx: 68, cy: 6, r: 1.8, color: 'cyan', dur: '23s', dx: -4, dy: 3 },
+  { cx: 82, cy: 3, r: 1.2, color: 'copper', dur: '21s', dx: 3, dy: 2 },
+  { cx: 92, cy: 9, r: 1.5, color: 'cyan', dur: '17s', dx: -2, dy: -3 },
+  // Upper-middle region
+  { cx: 10, cy: 22, r: 1, color: 'copper', dur: '24s', dx: 4, dy: 2 },
+  { cx: 25, cy: 28, r: 1.8, color: 'cyan', dur: '20s', dx: -3, dy: -2 },
+  { cx: 38, cy: 18, r: 1, color: 'copper', dur: '26s', dx: 2, dy: 4 },
+  { cx: 55, cy: 25, r: 1.5, color: 'cyan', dur: '22s', dx: -4, dy: -3 },
+  { cx: 70, cy: 20, r: 1.2, color: 'copper', dur: '19s', dx: 3, dy: 2 },
+  { cx: 85, cy: 26, r: 1, color: 'cyan', dur: '23s', dx: -2, dy: -4 },
+  { cx: 95, cy: 18, r: 1.5, color: 'copper', dur: '21s', dx: 2, dy: 3 },
+  // Middle region
+  { cx: 8, cy: 40, r: 1.2, color: 'cyan', dur: '25s', dx: -3, dy: -2 },
+  { cx: 22, cy: 45, r: 1.5, color: 'copper', dur: '18s', dx: 4, dy: 2 },
+  { cx: 48, cy: 38, r: 1, color: 'cyan', dur: '20s', dx: -2, dy: 4 },
+  { cx: 75, cy: 42, r: 1.8, color: 'copper', dur: '22s', dx: 3, dy: -3 },
+  { cx: 90, cy: 36, r: 1, color: 'cyan', dur: '24s', dx: -4, dy: 2 },
+  // Lower-middle region
+  { cx: 12, cy: 58, r: 1.5, color: 'copper', dur: '19s', dx: 3, dy: -2 },
+  { cx: 30, cy: 55, r: 1, color: 'cyan', dur: '23s', dx: -2, dy: 3 },
+  { cx: 50, cy: 60, r: 1.8, color: 'copper', dur: '21s', dx: 4, dy: -4 },
+  { cx: 65, cy: 54, r: 1.2, color: 'cyan', dur: '25s', dx: -3, dy: 2 },
+  { cx: 88, cy: 58, r: 1, color: 'copper', dur: '20s', dx: 2, dy: -3 },
+  // Bottom region
+  { cx: 8, cy: 74, r: 1.2, color: 'cyan', dur: '22s', dx: -3, dy: 2 },
+  { cx: 35, cy: 78, r: 1.5, color: 'copper', dur: '18s', dx: 4, dy: -2 },
+  { cx: 55, cy: 72, r: 1, color: 'cyan', dur: '20s', dx: -2, dy: 3 },
+  { cx: 78, cy: 76, r: 1.8, color: 'copper', dur: '24s', dx: 3, dy: -4 },
+  { cx: 92, cy: 70, r: 1.2, color: 'cyan', dur: '21s', dx: -4, dy: 2 },
 ];
 
 // Edges connect nearby nodes
@@ -38,6 +53,11 @@ const EDGES = [
   [8, 9], [9, 10], [10, 11], [11, 12], [12, 13], [13, 14],
   [8, 15], [9, 16], [11, 17], [12, 18], [13, 19],
   [15, 16], [16, 17], [17, 18], [18, 19],
+  // Lower connections
+  [15, 20], [16, 21], [17, 22], [18, 23], [19, 24],
+  [20, 21], [21, 22], [22, 23], [23, 24],
+  [20, 25], [21, 26], [22, 27], [23, 28], [24, 29],
+  [25, 26], [26, 27], [27, 28], [28, 29],
 ];
 
 function getColor(type, opacity = 1) {
@@ -65,7 +85,7 @@ export default function AnimatedMesh() {
       <svg
         ref={containerRef}
         className="animated-mesh-svg"
-        viewBox="0 0 100 80"
+        viewBox="0 0 100 85"
         preserveAspectRatio="xMidYMid slice"
         xmlns="http://www.w3.org/2000/svg"
       >
