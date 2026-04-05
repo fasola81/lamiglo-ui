@@ -73,7 +73,11 @@ export default function AnimatedMesh() {
     const handleScroll = () => {
       if (containerRef.current) {
         const scrollY = window.scrollY;
-        containerRef.current.style.transform = `translateY(${scrollY * 0.15}px)`;
+        const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+        // Normalize scroll to 0–1 range, then map to a subtle ±25px parallax
+        const scrollFraction = docHeight > 0 ? scrollY / docHeight : 0;
+        const parallaxY = (scrollFraction - 0.5) * 50; // range: -25px to +25px
+        containerRef.current.style.transform = `translateY(${parallaxY}px)`;
       }
     };
     window.addEventListener('scroll', handleScroll, { passive: true });
