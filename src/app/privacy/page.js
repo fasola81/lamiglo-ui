@@ -129,7 +129,7 @@ export default function PrivacyPage() {
             </ul>
             <p>
               To exercise any of these rights, please contact us at{' '}
-              <a href="mailto:hello@lamiglo.com" className="legal-link">hello@lamiglo.com</a>.
+              <a href="mailto:contact@lamiglo.com" className="legal-link">contact@lamiglo.com</a>.
             </p>
           </section>
 
@@ -155,7 +155,7 @@ export default function PrivacyPage() {
             <p>If you have questions or concerns about this Privacy Policy, please contact us:</p>
             <div className="legal-contact-card">
               <p><strong>Lamiglo</strong></p>
-              <p>Email: <a href="mailto:hello@lamiglo.com" className="legal-link">hello@lamiglo.com</a></p>
+              <p>Email: <a href="mailto:contact@lamiglo.com" className="legal-link">contact@lamiglo.com</a></p>
               <p>Website: <a href="https://lamiglo.com" className="legal-link">lamiglo.com</a></p>
             </div>
           </section>

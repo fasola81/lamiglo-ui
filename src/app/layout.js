@@ -15,10 +15,7 @@ export const metadata = {
   icons: {
     icon: '/images/favicon.png',
   },
-  // Google Search Console verification — replace value with your actual verification code
-  verification: {
-    google: 'YOUR_GOOGLE_SEARCH_CONSOLE_VERIFICATION_CODE',
-  },
+
   robots: {
     index: true,
     follow: true,
@@ -36,8 +33,6 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body>
-        {/* Animated Background Mesh */}
-        <div className="mesh-gradient" aria-hidden="true" />
         {children}
       </body>
     </html>

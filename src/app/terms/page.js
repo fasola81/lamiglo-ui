@@ -175,7 +175,7 @@ export default function TermsPage() {
             <p>For questions about these Terms, please contact us:</p>
             <div className="legal-contact-card">
               <p><strong>Lamiglo</strong></p>
-              <p>Email: <a href="mailto:hello@lamiglo.com" className="legal-link">hello@lamiglo.com</a></p>
+              <p>Email: <a href="mailto:contact@lamiglo.com" className="legal-link">contact@lamiglo.com</a></p>
               <p>Website: <a href="https://lamiglo.com" className="legal-link">lamiglo.com</a></p>
             </div>
           </section>

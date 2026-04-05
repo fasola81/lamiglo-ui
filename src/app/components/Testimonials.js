@@ -69,7 +69,7 @@ export default function Testimonials() {
   return (
     <section className="testimonials section-padding" id="testimonials">
       <div className="section-container">
-        <span className="section-label">Social Proof</span>
+        <span className="section-label">Client Stories</span>
         <h2 className="section-title">
           What Our Clients <span className="gradient-text-copper">Say</span>
         </h2>

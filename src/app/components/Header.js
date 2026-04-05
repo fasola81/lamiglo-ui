@@ -18,17 +18,17 @@ function AnimatedLogo() {
     >
       <defs>
         <linearGradient id="logo-grad" x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%" stopColor="#00D4FF" />
-          <stop offset="100%" stopColor="#E8B86D" />
+          <stop offset="0%" stopColor="#A855F7" />
+          <stop offset="100%" stopColor="#FF8A65" />
         </linearGradient>
         <linearGradient id="logo-grad-inner" x1="100%" y1="0%" x2="0%" y2="100%">
-          <stop offset="0%" stopColor="#1AD1FF" />
-          <stop offset="100%" stopColor="#D4A056" />
+          <stop offset="0%" stopColor="#C084FC" />
+          <stop offset="100%" stopColor="#FF6B6B" />
         </linearGradient>
       </defs>
 
       {/* Outer rounded square */}
-      <rect x="2" y="2" width="36" height="36" rx="10" fill="#111114" stroke="url(#logo-grad)" strokeWidth="1.5">
+      <rect x="2" y="2" width="36" height="36" rx="10" fill="rgba(15,10,30,0.6)" stroke="url(#logo-grad)" strokeWidth="1.5">
         <animate attributeName="rx" values="10;12;10" dur="6s" repeatCount="indefinite" />
       </rect>
 
