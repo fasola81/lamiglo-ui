@@ -3,10 +3,15 @@
 import { useEffect } from 'react';
 import Header from './components/Header';
 import Hero from './components/Hero';
+import TrustBar from './components/TrustBar';
 import Services from './components/Services';
+import Process from './components/Process';
 import Showcase from './components/Showcase';
+import Testimonials from './components/Testimonials';
+import WhyChoose from './components/WhyChoose';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
+import AnimatedMesh from './components/AnimatedMesh';
 
 export default function Home() {
   // Intersection Observer for scroll reveal animations
@@ -30,11 +35,16 @@ export default function Home() {
 
   return (
     <>
+      <AnimatedMesh />
       <Header />
       <main>
         <Hero />
+        <TrustBar />
         <Services />
+        <Process />
         <Showcase />
+        <Testimonials />
+        <WhyChoose />
         <Contact />
       </main>
       <Footer />

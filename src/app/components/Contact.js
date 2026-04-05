@@ -15,19 +15,46 @@ export default function Contact() {
           </p>
 
           <a href="mailto:contact@lamiglo.com" className="contact-email-card">
-            <div className="contact-email-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
-                <polyline points="22,6 12,13 2,6"/>
+            {/* Pulse rings behind icon */}
+            <div className="contact-pulse-container">
+              <svg className="contact-pulse-svg" viewBox="0 0 80 80" fill="none" aria-hidden="true">
+                <circle cx="40" cy="40" r="20" stroke="rgba(232,184,109,0.15)" strokeWidth="0.8">
+                  <animate attributeName="r" values="16;32;16" dur="4s" repeatCount="indefinite" />
+                  <animate attributeName="opacity" values="0.6;0;0.6" dur="4s" repeatCount="indefinite" />
+                </circle>
+                <circle cx="40" cy="40" r="14" stroke="rgba(232,184,109,0.1)" strokeWidth="0.6">
+                  <animate attributeName="r" values="12;26;12" dur="4s" begin="0.8s" repeatCount="indefinite" />
+                  <animate attributeName="opacity" values="0.5;0;0.5" dur="4s" begin="0.8s" repeatCount="indefinite" />
+                </circle>
+                <circle cx="40" cy="40" r="10" stroke="rgba(232,184,109,0.08)" strokeWidth="0.5">
+                  <animate attributeName="r" values="8;22;8" dur="4s" begin="1.6s" repeatCount="indefinite" />
+                  <animate attributeName="opacity" values="0.4;0;0.4" dur="4s" begin="1.6s" repeatCount="indefinite" />
+                </circle>
               </svg>
             </div>
+
+            {/* Envelope icon with open animation on hover */}
+            <div className="contact-email-icon">
+              <svg viewBox="0 0 28 28" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="contact-envelope-svg">
+                {/* Body */}
+                <rect x="2" y="7" width="24" height="17" rx="3" className="envelope-body" />
+                {/* Flap */}
+                <path d="M2 7 L14 16 L26 7" className="envelope-flap" />
+                {/* Letter peek */}
+                <rect x="8" y="6" width="12" height="8" rx="1" fill="rgba(232,184,109,0.15)" className="envelope-letter" />
+              </svg>
+            </div>
+
             <div className="contact-email-content">
               <span className="contact-email-label">Email Us Directly</span>
               <span className="contact-email-address">contact@lamiglo.com</span>
             </div>
+
+            {/* Arrow that draws itself on hover */}
             <div className="contact-email-arrow">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M5 12h14M12 5l7 7-7 7"/>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="contact-arrow-svg">
+                <path d="M5 12h14" stroke="currentColor" className="arrow-line" />
+                <path d="M12 5l7 7-7 7" stroke="currentColor" className="arrow-head" />
               </svg>
             </div>
           </a>
